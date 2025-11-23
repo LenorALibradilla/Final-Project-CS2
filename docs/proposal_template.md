@@ -48,9 +48,9 @@ We have provided **2 starter ideas** for each dataset — you must design **at l
 ---
 
 ## 🧠 Logic Plan  
-Choose **ONE** way to describe your program’s logic:  
+Describe your program’s logic:  
 
-### Option 1: Pseudocode  
+### Pseudocode  
 Write your steps in plain English. Example:  
 Load JSON file
 Display menu of features
@@ -59,7 +59,7 @@ If user chooses "2", list all borrowed books
 Repeat until user exits program
 
 
-### Option 2: Flowchart  
+### Flowchart  
 Attach or draw a flowchart showing how the program will work.  
 
 ---
