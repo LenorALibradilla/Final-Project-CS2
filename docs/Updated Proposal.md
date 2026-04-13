@@ -43,7 +43,7 @@ Attach or draw a flowchart showing how the program will work.
 
 📂 GitHub Repository Link
 Paste your GitHub repository link here:
-https://github.com/PrinceVhelbreiBarbarona/project-proposal
+https://github.com/LenorALibradilla/Final-Project-CS2/tree/main
 
 
 
