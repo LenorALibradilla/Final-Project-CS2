@@ -123,3 +123,90 @@ LOOP forever
 END LOOP
 
 END
+
+FUNCTION features_menu()
+
+    DISPLAY:
+        1. Count visits
+        2. List doctors
+        3. Identify diagnoses
+        4. Demographic doctor preference
+        5. Doctor prescription habits
+        6. Back
+
+    INPUT choice
+
+    IF choice == 1 THEN
+        INPUT patient ID
+        CALL count_patient_visits()
+
+    ELSE IF choice == 2 THEN
+        INPUT patient ID
+        CALL list_doctors_consulted()
+
+    ELSE IF choice == 3 THEN
+        INPUT patient ID
+        CALL identify_diagnoses()
+
+    ELSE IF choice == 4 THEN
+        CALL analyze_demographic_doctor_preference()
+
+    ELSE IF choice == 5 THEN
+        CALL analyze_doctor_prescription_habits()
+
+    ELSE
+        RETURN to main menu
+END FUNCTION
+
+FUNCTION analyze_demographic_doctor_preference()
+
+    FETCH all patients
+
+    IF no data THEN
+        DISPLAY message
+        RETURN
+    ENDIF
+
+    NORMALIZE data into list
+
+    INITIALIZE:
+        gender_counts = {Male: {}, Female: {}}
+        age_groups = {Young, Adult, Senior}
+
+    FOR each patient
+        GET age, gender, visits
+
+        IF missing data THEN skip
+
+        DETERMINE age_group
+
+        FOR each visit
+            GET doctor
+
+            INCREMENT:
+                gender_counts[gender][doctor]
+                age_group_counts[age_group][doctor]
+
+    DISPLAY most frequent doctor per group
+
+END FUNCTION
+
+FUNCTION analyze_doctor_prescription_habits()
+
+    INPUT doctor_name
+    NORMALIZE doctor_name
+
+    FETCH all patients
+
+    IF no data THEN RETURN
+
+    FOR each patient
+        FOR each visit
+            IF doctor matches THEN
+                COUNT treatment frequency
+
+    SORT treatments by frequency
+
+    DISPLAY results
+
+END FUNCTION
