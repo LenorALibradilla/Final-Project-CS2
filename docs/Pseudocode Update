@@ -1,0 +1,125 @@
+START
+
+LOOP forever
+    DISPLAY main menu:
+        1. Display all patients
+        2. Add patient
+        3. Update patient
+        4. Delete patient
+        5. Features
+        6. Exit
+
+    INPUT user_choice
+
+    IF user_choice == 1 THEN
+        FETCH all patients from database
+        IF data exists THEN
+            DISPLAY each patient (ID, name, age, gender)
+        ELSE
+            DISPLAY "No patients found"
+        ENDIF
+
+    ELSE IF user_choice == 2 THEN
+        INPUT name, age, gender
+        GENERATE new patient ID
+        CHECK if patient already exists
+        IF exists THEN
+            DISPLAY error message
+        ELSE
+            SAVE new patient to database
+        ENDIF
+
+    ELSE IF user_choice == 3 THEN
+        INPUT patient name
+        FETCH patient data
+        IF found THEN
+            DISPLAY current info
+            INPUT new values (optional)
+            UPDATE patient record
+        ELSE
+            DISPLAY "Patient not found"
+        ENDIF
+
+    ELSE IF user_choice == 4 THEN
+        INPUT patient name
+        IF patient exists THEN
+            DELETE patient
+        ELSE
+            DISPLAY "Patient not found"
+        ENDIF
+
+    ELSE IF user_choice == 5 THEN
+        CALL features_menu()
+
+    ELSE IF user_choice == 6 THEN
+        EXIT program
+
+    ELSE
+        DISPLAY "Invalid choice"
+    ENDIF
+END LOOP
+
+END
+
+START
+
+LOOP forever
+    DISPLAY main menu:
+        1. Display all patients
+        2. Add patient
+        3. Update patient
+        4. Delete patient
+        5. Features
+        6. Exit
+
+    INPUT user_choice
+
+    IF user_choice == 1 THEN
+        FETCH all patients from database
+        IF data exists THEN
+            DISPLAY each patient (ID, name, age, gender)
+        ELSE
+            DISPLAY "No patients found"
+        ENDIF
+
+    ELSE IF user_choice == 2 THEN
+        INPUT name, age, gender
+        GENERATE new patient ID
+        CHECK if patient already exists
+        IF exists THEN
+            DISPLAY error message
+        ELSE
+            SAVE new patient to database
+        ENDIF
+
+    ELSE IF user_choice == 3 THEN
+        INPUT patient name
+        FETCH patient data
+        IF found THEN
+            DISPLAY current info
+            INPUT new values (optional)
+            UPDATE patient record
+        ELSE
+            DISPLAY "Patient not found"
+        ENDIF
+
+    ELSE IF user_choice == 4 THEN
+        INPUT patient name
+        IF patient exists THEN
+            DELETE patient
+        ELSE
+            DISPLAY "Patient not found"
+        ENDIF
+
+    ELSE IF user_choice == 5 THEN
+        CALL features_menu()
+
+    ELSE IF user_choice == 6 THEN
+        EXIT program
+
+    ELSE
+        DISPLAY "Invalid choice"
+    ENDIF
+END LOOP
+
+END
